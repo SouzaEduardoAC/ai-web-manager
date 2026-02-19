@@ -1,24 +1,23 @@
-# AI Web Manager: MCP Orchestrator UI
+# AI Web Manager: The Oak UI
 
-The frontend management console for the Model Context Protocol (MCP) Orchestrator. This modular Vue 3 SPA allows users to interact with AI agents, manage MCP server registries, and approve sensitive tool executions.
+The frontend management console for **The Oak** AI Orchestrator. This modular Vue 3 SPA allows users to interact with AI agents, manage protocol server registries, and approve sensitive tool executions.
 
 ## 📁 Project Structure
 
 - **`/src`**: The core Vue 3 + TypeScript source code.
 - **`/public`**: Static assets.
 - **`/docs`**: System documentation and architectural details.
-- **`web_interface_migration_plan.md`**: Strategic roadmap used for the legacy-to-modular migration.
 
 ## 📖 Documentation
 
-- **[Technical Documentation](./docs/technical_documentation.md)**: Deep dive into the architecture, auth, and protocols.
+- **[Technical Documentation](./docs/technical_documentation.md)**: Deep dive into the multi-theme architecture, auth, and protocols.
 - **[AI Context](./docs/ai_context.md)**: Essential reading for AI agents or developers new to the project.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js (v18+)
-- MCP Orchestrator Backend (Golang)
+- AI Orchestrator Backend (Golang)
 - Docker & Docker Compose (optional)
 
 ### Installation
@@ -46,4 +45,5 @@ The interface will be available at `http://localhost:8080`.
 - **Real-time Agent Chat**: Powered by native WebSockets.
 - **Multi-Transport Registry**: Support for Stdio, SSE, HTTP, and Docker containers.
 - **HITL Approvals**: Sequential queue for human-in-the-loop tool execution.
+- **Multi-Theme Engine**: Dynamic switching between **Oak** and **MCP** visual identities.
 - **Modular Auth**: Keycloak integration with a local bypass for development.
