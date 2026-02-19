@@ -102,7 +102,7 @@ onUnmounted(() => {
             <img :src="logo" alt="Ecoza Corp" class="w-full h-full object-contain" />
           </div>
           <div>
-            <h1 class="font-black text-sm tracking-[0.2em] uppercase leading-none">MCP Orchestrator</h1>
+            <h1 class="font-black text-sm tracking-[0.2em] uppercase leading-none">Ecoza Corp</h1>
             <div class="flex items-center space-x-2 mt-1">
               <div class="w-1.5 h-1.5 rounded-full" :class="isConnected ? 'bg-mcp-green shadow-[0_0_8px_rgba(74,222,128,0.5)]' : 'bg-mcp-red'"></div>
               <span class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">{{ isConnected ? 'Uplink Stable' : 'Offline' }}</span>
