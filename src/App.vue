@@ -103,7 +103,7 @@ const toggleTheme = () => {
 
   <div v-else class="h-screen w-full flex flex-col bg-brand-dark text-gray-100 font-sans selection:bg-brand-primary selection:text-brand-dark">
     <!-- Top Navigation Bar -->
-    <nav class="h-16 border-b border-gray-800 bg-gray-950/50 backdrop-blur-md flex items-center justify-between px-6 z-10">
+    <nav class="h-16 border-b border-gray-800 bg-brand-secondary/10 backdrop-blur-md flex items-center justify-between px-6 z-10">
       <div class="flex items-center space-x-8">
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 bg-transparent flex items-center justify-center">
@@ -120,12 +120,12 @@ const toggleTheme = () => {
 
         <div class="flex space-x-1">
           <router-link to="/chat" 
-            active-class="bg-gray-800 text-brand-primary"
+            active-class="bg-brand-secondary/30 text-brand-primary"
             class="px-4 py-1.5 rounded-md text-xs font-black uppercase tracking-widest transition-all text-gray-500 hover:text-gray-300">
             Communications
           </router-link>
           <router-link to="/mcp" 
-            active-class="bg-gray-800 text-brand-primary"
+            active-class="bg-brand-secondary/30 text-brand-primary"
             class="px-4 py-1.5 rounded-md text-xs font-black uppercase tracking-widest transition-all text-gray-500 hover:text-gray-300">
             Registry
           </router-link>
@@ -134,12 +134,12 @@ const toggleTheme = () => {
 
       <div class="flex items-center space-x-6">
         <!-- Theme Toggle -->
-        <button @click="toggleTheme" class="flex items-center space-x-2 bg-gray-900/50 px-3 py-1.5 rounded-lg border border-gray-800 hover:border-gray-600 transition group">
+        <button @click="toggleTheme" class="flex items-center space-x-2 bg-brand-secondary/20 px-3 py-1.5 rounded-lg border border-gray-800 hover:border-gray-600 transition group">
           <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest group-hover:text-gray-400">Theme</span>
           <span class="text-xs font-black uppercase tracking-tighter text-brand-primary">{{ themeStore.currentTheme }}</span>
         </button>
 
-        <div v-if="chatStore.availableModels.length > 0" class="hidden md:flex items-center space-x-3 bg-gray-900/50 px-3 py-1.5 rounded-lg border border-gray-800">
+        <div v-if="chatStore.availableModels.length > 0" class="hidden md:flex items-center space-x-3 bg-brand-secondary/20 px-3 py-1.5 rounded-lg border border-gray-800">
           <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Model</span>
           <select v-model="chatStore.selectedModel" class="bg-transparent text-xs font-bold text-brand-primary focus:outline-none cursor-pointer">
             <option v-for="m in chatStore.availableModels" :key="m.id" :value="m.id">{{ m.name }}</option>
@@ -168,7 +168,7 @@ const toggleTheme = () => {
     </main>
 
     <!-- Footer Status Bar -->
-    <footer class="h-8 border-t border-gray-800 bg-gray-950 flex items-center justify-between px-6">
+    <footer class="h-8 border-t border-gray-800 bg-brand-dark/80 flex items-center justify-between px-6">
       <div class="flex items-center space-x-6">
         <div class="flex items-center space-x-2">
           <span class="text-[9px] font-black text-gray-700 uppercase tracking-widest">Protocol</span>
@@ -186,7 +186,3 @@ const toggleTheme = () => {
     </footer>
   </div>
 </template>
-
-<style>
-/* Scoped styles moved to style.css */
-</style>

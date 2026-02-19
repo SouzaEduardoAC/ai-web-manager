@@ -8,12 +8,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: 'var(--brand-dark)',
-          primary: 'var(--brand-primary)',
-          secondary: 'var(--brand-secondary)',
-          accent: 'var(--brand-accent)',
-          'status-green': 'var(--brand-status-green)',
-          'status-red': 'var(--brand-status-red)',
+          dark: 'rgb(var(--brand-dark) / <alpha-value>)',
+          primary: 'rgb(var(--brand-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--brand-secondary) / <alpha-value>)',
+          accent: 'rgb(var(--brand-accent) / <alpha-value>)',
+          'status-green': 'rgb(var(--brand-status-green) / <alpha-value>)',
+          'status-red': 'rgb(var(--brand-status-red) / <alpha-value>)',
         }
       }
     },
