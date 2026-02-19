@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        mcp: {
-          dark: '#0f172a', // gray-900 equivalent or slightly darker
-          blue: '#60a5fa', // blue-400
-          green: '#4ade80', // green-400
-          red: '#f87171', // red-400
-          yellow: '#facc15', // yellow-400
+        oak: {
+          dark: '#0f172a',
+          primary: '#224b0c', // Forest Green
+          secondary: '#6f4e37', // Earthy Brown
+          accent: '#b8860b', // Warm Amber
+          'status-green': '#4ade80',
+          'status-red': '#f87171',
         }
       }
     },

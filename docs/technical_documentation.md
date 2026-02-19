@@ -1,13 +1,13 @@
-# Technical Documentation: MCP Orchestrator Web Interface
+# Technical Documentation: The Oak - Web Interface
 
 ## Architecture Overview
 The web interface is a modern Single Page Application (SPA) built with **Vue 3** and **TypeScript**, powered by the **Vite** build tool. It replaces the legacy monolithic `index.html` with a modular, maintainable, and type-safe codebase.
 
 ### Key Technologies
 - **Framework:** Vue 3 (Composition API)
-- **State Management:** Pinia (modular stores for Auth, Chat, and MCP Registry)
+- **State Management:** Pinia (modular stores for Auth, Chat, and Registry)
 - **Routing:** Vue Router (Lazy-loading for views)
-- **Styling:** Tailwind CSS with a custom "MCP Dark" terminal-inspired theme
+- **Styling:** Tailwind CSS with a custom **"Oak Theme"** (Nature-inspired: Forest Green, Earthy Brown, Warm Amber)
 - **Networking:** Native WebSocket API + Axios for RESTful requests
 - **Auth:** Keycloak JS integration
 
@@ -51,5 +51,7 @@ The project is fully containerized using **Docker**:
 - **Orchestration:** `docker-compose.yml` manages the service, port mappings (`8080:80`), and environment variable injection.
 
 ## Asset Management
-- **Logo:** The primary branding logo is `src/assets/ecoza_corp_backgroundless.png`.
-- **Styling:** Global directives and theme configurations are handled in `src/style.css` and `tailwind.config.js`.
+
+- **Logo:** The primary branding logo is `src/assets/oak_logo.png`.
+
+- **Styling:** Global directives and theme configurations are handled in `src/style.css` and `tailwind.config.js` (using `oak-` tokens).
