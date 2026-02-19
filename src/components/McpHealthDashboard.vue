@@ -38,7 +38,7 @@ onMounted(() => {
   <div class="space-y-6">
     <!-- Health Summary Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 shadow-lg">
+      <div class="bg-brand-secondary/10 rounded-lg p-4 border border-brand-secondary/30 shadow-lg backdrop-blur-sm">
         <div class="flex items-center justify-between">
           <div>
             <p class="text-gray-400 text-sm">Total MCPs</p>
@@ -52,7 +52,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="bg-gray-800 rounded-lg p-4 border border-green-700/50 shadow-lg">
+      <div class="bg-brand-secondary/10 rounded-lg p-4 border border-brand-status-green/30 shadow-lg backdrop-blur-sm">
         <div class="flex items-center justify-between">
           <div>
             <p class="text-gray-400 text-sm">Healthy</p>
@@ -66,7 +66,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="bg-gray-800 rounded-lg p-4 border border-red-700/50 shadow-lg">
+      <div class="bg-brand-secondary/10 rounded-lg p-4 border border-brand-status-red/30 shadow-lg backdrop-blur-sm">
         <div class="flex items-center justify-between">
           <div>
             <p class="text-gray-400 text-sm">Issues</p>
@@ -82,10 +82,10 @@ onMounted(() => {
     </div>
 
     <!-- MCP List -->
-    <div class="bg-gray-800 rounded-lg border border-gray-700 shadow-xl">
-      <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+    <div class="bg-brand-secondary/10 rounded-lg border border-brand-secondary/30 shadow-xl backdrop-blur-sm">
+      <div class="p-4 border-b border-brand-secondary/30 flex justify-between items-center">
         <h2 class="text-lg font-semibold">Registered MCP Servers</h2>
-        <button @click="mcpStore.fetchHealth()" class="text-sm bg-blue-600 hover:bg-blue-500 px-3 py-1 rounded transition flex items-center space-x-1">
+        <button @click="mcpStore.fetchHealth()" class="text-sm bg-brand-primary/20 hover:bg-brand-primary text-brand-primary hover:text-brand-dark px-3 py-1 rounded transition flex items-center space-x-1 font-bold border border-brand-primary/30">
           <span v-if="mcpStore.isLoading" class="animate-spin mr-1">🔄</span>
           <span v-else>🔄</span>
           <span>Refresh</span>
@@ -102,8 +102,8 @@ onMounted(() => {
         <p class="text-sm mt-2">Connect your first MCP server to begin.</p>
       </div>
 
-      <div v-else class="divide-y divide-gray-700">
-        <div v-for="mcp in mcpStore.registry" :key="mcp.name" class="p-4 hover:bg-gray-700/30 transition group">
+      <div v-else class="divide-y divide-brand-secondary/30">
+        <div v-for="mcp in mcpStore.registry" :key="mcp.name" class="p-4 hover:bg-brand-secondary/20 transition group">
           <div class="flex items-start justify-between">
             <div class="flex-1">
               <div class="flex items-center space-x-3 mb-2">

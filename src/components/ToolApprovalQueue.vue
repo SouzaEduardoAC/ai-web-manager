@@ -20,15 +20,15 @@ const emit = defineEmits(['approve', 'reject']);
       <span class="text-[10px] font-mono text-gray-500 uppercase tracking-tighter">{{ request.data.callId }}</span>
     </div>
     
-    <div class="p-4">
+    <div class="p-4 bg-brand-secondary/20">
       <div class="flex items-center space-x-2 mb-3">
         <div class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></div>
         <div class="text-lg font-mono font-bold text-white">{{ request.data.name }}</div>
       </div>
       
       <div class="relative group">
-        <pre class="bg-gray-900 p-3 rounded-lg text-xs text-gray-300 overflow-x-auto border border-gray-700/50 font-mono leading-relaxed max-h-48 overflow-y-auto">{{ JSON.stringify(request.data.args, null, 2) }}</pre>
-        <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition text-[10px] text-gray-600 bg-gray-900 px-1 rounded">ARGUMENTS</div>
+        <pre class="bg-brand-dark/80 p-3 rounded-lg text-xs text-gray-300 overflow-x-auto border border-brand-secondary/50 font-mono leading-relaxed max-h-48 overflow-y-auto">{{ JSON.stringify(request.data.args, null, 2) }}</pre>
+        <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition text-[10px] text-gray-600 bg-brand-dark px-1 rounded">ARGUMENTS</div>
       </div>
 
       <div v-if="request.status === 'pending'" class="flex space-x-3 mt-4">
@@ -52,10 +52,10 @@ const emit = defineEmits(['approve', 'reject']);
         </div>
       </div>
 
-      <div v-if="request.output" class="mt-4 pt-4 border-t border-gray-700">
+      <div v-if="request.output" class="mt-4 pt-4 border-t border-brand-secondary/50">
         <div class="text-[10px] font-black text-gray-500 mb-2 uppercase tracking-widest flex items-center space-x-2">
           <span>Output Result</span>
-          <div class="flex-1 h-px bg-gray-700/50"></div>
+          <div class="flex-1 h-px bg-brand-secondary/30"></div>
         </div>
         <pre class="bg-black/40 p-3 rounded-lg text-xs text-brand-status-green overflow-x-auto font-mono max-h-60 overflow-y-auto leading-normal selection:bg-brand-status-green selection:text-brand-dark">{{ request.output }}</pre>
       </div>

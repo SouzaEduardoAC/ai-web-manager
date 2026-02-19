@@ -4,19 +4,21 @@
 
 /* Theme Definitions */
 :root, [data-theme='oak'] {
-  --brand-dark: 15 23 42;
-  --brand-primary: 34 75 12;
-  --brand-secondary: 111 78 55;
-  --brand-accent: 184 134 11;
-  --brand-status-green: 74 222 128;
-  --brand-status-red: 248 113 113;
+  /* High-contrast Earthy/Nature Theme */
+  --brand-dark: 10 12 8;           /* #0a0c08 - Dark Forest Black */
+  --brand-primary: 134 239 172;    /* #86efac - Sage Green (Light) */
+  --brand-secondary: 30 41 59;     /* #1e293b - Slate (keeping it neutral for UI) */
+  --brand-accent: 251 191 36;      /* #fbbf24 - Amber 400 */
+  --brand-status-green: 74 222 128; /* #4ade80 - Green 400 */
+  --brand-status-red: 248 113 113;   /* #f87171 - Red 400 */
 }
 
 [data-theme='mcp'] {
-  --brand-dark: 15 23 42;
-  --brand-primary: 96 165 250;
-  --brand-secondary: 30 41 59;
-  --brand-accent: 250 204 21;
+  /* Original Tech/Blue Theme */
+  --brand-dark: 15 23 42;          /* #0f172a - Dark Slate Blue */
+  --brand-primary: 96 165 250;     /* #60a5fa - Light Blue */
+  --brand-secondary: 30 41 59;     /* #1e293b - Slate */
+  --brand-accent: 250 204 21;      /* #facc15 - Amber/Yellow */
   --brand-status-green: 74 222 128;
   --brand-status-red: 248 113 113;
 }

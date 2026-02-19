@@ -145,8 +145,8 @@ const handleSubmit = () => {
 
     <!-- Actions -->
     <div class="flex space-x-3 pt-4">
-      <button type="button" @click="emit('cancel')" class="flex-1 px-4 py-2 border border-gray-700 rounded-lg hover:bg-gray-700 transition">Cancel</button>
-      <button type="submit" class="flex-1 px-4 py-2 bg-brand-primary hover:bg-blue-500 text-brand-dark font-bold rounded-lg transition">Add Server</button>
+      <button type="button" @click="emit('cancel')" class="flex-1 px-4 py-2 border border-brand-secondary rounded-lg hover:bg-brand-secondary/20 transition text-gray-300">Cancel</button>
+      <button type="submit" class="flex-1 px-4 py-2 bg-brand-primary hover:bg-brand-primary/80 text-brand-dark font-bold rounded-lg transition shadow-lg shadow-brand-primary/10">Add Server</button>
     </div>
   </form>
 </template>

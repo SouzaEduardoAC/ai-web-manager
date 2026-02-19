@@ -55,7 +55,7 @@ const handleReject = (callId: string) => {
         <!-- User Message -->
         <div v-if="msg.role === 'user'" class="self-end max-w-[85%] group">
           <div class="flex flex-col items-end space-y-1">
-            <div class="bg-brand-primary text-brand-dark px-5 py-3 rounded-2xl rounded-tr-none font-medium shadow-lg shadow-brand-primary/10">
+            <div class="bg-brand-primary text-white px-5 py-3 rounded-2xl rounded-tr-none font-medium shadow-lg shadow-brand-primary/10">
               {{ msg.content }}
             </div>
             <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition pr-1">Directive Sent</span>
@@ -65,7 +65,7 @@ const handleReject = (callId: string) => {
         <!-- Agent Message -->
         <div v-if="msg.role === 'agent'" class="self-start max-w-[85%] group">
           <div class="flex flex-col items-start space-y-1">
-            <div class="bg-gray-800/80 text-gray-100 px-5 py-3 rounded-2xl rounded-tl-none border border-gray-700 shadow-xl backdrop-blur-md">
+            <div class="bg-brand-secondary/40 text-gray-100 px-5 py-3 rounded-2xl rounded-tl-none border border-brand-secondary/50 shadow-xl backdrop-blur-md">
               <p class="whitespace-pre-wrap leading-relaxed text-sm selection:bg-brand-primary selection:text-brand-dark">{{ msg.content }}</p>
             </div>
             <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition pl-1">Orchestrator Feedback</span>
@@ -105,7 +105,7 @@ const handleReject = (callId: string) => {
         <div class="absolute right-2 top-2 bottom-2 flex items-center">
           <button
             type="submit"
-            class="h-full bg-brand-primary hover:bg-blue-400 disabled:bg-gray-800 disabled:text-gray-600 text-brand-dark px-6 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 active:scale-95 shadow-lg shadow-brand-primary/20"
+            class="h-full bg-brand-primary hover:bg-brand-primary/80 disabled:bg-gray-800 disabled:text-gray-600 text-white px-6 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 active:scale-95 shadow-lg shadow-brand-primary/20"
             :disabled="!inputMessage.trim() || chatStore.isThinking"
           >
             EXECUTE
