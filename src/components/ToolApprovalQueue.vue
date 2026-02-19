@@ -9,11 +9,11 @@ const emit = defineEmits(['approve', 'reject']);
 </script>
 
 <template>
-  <div class="self-start w-full max-w-md bg-gray-800 border border-oak-accent/30 rounded-xl overflow-hidden shadow-xl my-4">
-    <div class="bg-oak-accent/10 px-4 py-2 border-b border-oak-accent/20 flex justify-between items-center">
+  <div class="self-start w-full max-w-md bg-gray-800 border border-brand-accent/30 rounded-xl overflow-hidden shadow-xl my-4">
+    <div class="bg-brand-accent/10 px-4 py-2 border-b border-brand-accent/20 flex justify-between items-center">
       <div class="flex items-center space-x-2">
-        <span class="text-oak-accent font-bold text-xs uppercase tracking-widest">Tool Request</span>
-        <span v-if="request.totalInQueue > 1" class="bg-oak-accent text-oak-dark px-1.5 py-0.5 rounded text-[10px] font-black">
+        <span class="text-brand-accent font-bold text-xs uppercase tracking-widest">Tool Request</span>
+        <span v-if="request.totalInQueue > 1" class="bg-brand-accent text-brand-dark px-1.5 py-0.5 rounded text-[10px] font-black">
           {{ request.queuePosition }} OF {{ request.totalInQueue }}
         </span>
       </div>
@@ -22,7 +22,7 @@ const emit = defineEmits(['approve', 'reject']);
     
     <div class="p-4">
       <div class="flex items-center space-x-2 mb-3">
-        <div class="w-2 h-2 bg-oak-accent rounded-full animate-pulse"></div>
+        <div class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></div>
         <div class="text-lg font-mono font-bold text-white">{{ request.data.name }}</div>
       </div>
       
@@ -33,21 +33,21 @@ const emit = defineEmits(['approve', 'reject']);
 
       <div v-if="request.status === 'pending'" class="flex space-x-3 mt-4">
         <button @click="emit('approve', request.data.callId)" 
-          class="flex-1 bg-oak-status-green/20 hover:bg-oak-status-green text-oak-status-green hover:text-oak-dark border border-oak-status-green/30 py-2 rounded-lg transition-all duration-200 text-sm font-bold shadow-lg shadow-oak-status-green/5">
+          class="flex-1 bg-brand-status-green/20 hover:bg-brand-status-green text-brand-status-green hover:text-brand-dark border border-brand-status-green/30 py-2 rounded-lg transition-all duration-200 text-sm font-bold shadow-lg shadow-brand-status-green/5">
           APPROVE
         </button>
         <button @click="emit('reject', request.data.callId)" 
-          class="flex-1 bg-oak-status-red/10 hover:bg-oak-status-red text-oak-status-red hover:text-oak-dark border border-oak-status-red/30 py-2 rounded-lg transition-all duration-200 text-sm font-bold">
+          class="flex-1 bg-brand-status-red/10 hover:bg-brand-status-red text-brand-status-red hover:text-brand-dark border border-brand-status-red/30 py-2 rounded-lg transition-all duration-200 text-sm font-bold">
           REJECT
         </button>
       </div>
       
       <div v-else class="mt-4 flex flex-col items-center justify-center py-2 px-4 rounded-lg border italic text-sm"
-        :class="request.status === 'approved' ? 'bg-oak-status-green/5 border-oak-status-green/20 text-oak-status-green' : 'bg-oak-status-red/5 border-oak-status-red/20 text-oak-status-red'">
+        :class="request.status === 'approved' ? 'bg-brand-status-green/5 border-brand-status-green/20 text-brand-status-green' : 'bg-brand-status-red/5 border-brand-status-red/20 text-brand-status-red'">
         <div class="flex items-center space-x-2 font-bold not-italic uppercase tracking-widest text-xs">
           <span>{{ request.status === 'approved' ? '✓ Executing' : '✗ Rejected' }}</span>
         </div>
-        <div v-if="request.status === 'approved' && request.totalInQueue > request.queuePosition" class="text-[10px] mt-1 text-oak-primary not-italic font-medium uppercase tracking-tighter">
+        <div v-if="request.status === 'approved' && request.totalInQueue > request.queuePosition" class="text-[10px] mt-1 text-brand-primary not-italic font-medium uppercase tracking-tighter">
           Waiting for remaining approvals...
         </div>
       </div>
@@ -57,7 +57,7 @@ const emit = defineEmits(['approve', 'reject']);
           <span>Output Result</span>
           <div class="flex-1 h-px bg-gray-700/50"></div>
         </div>
-        <pre class="bg-black/40 p-3 rounded-lg text-xs text-oak-status-green overflow-x-auto font-mono max-h-60 overflow-y-auto leading-normal selection:bg-oak-status-green selection:text-oak-dark">{{ request.output }}</pre>
+        <pre class="bg-black/40 p-3 rounded-lg text-xs text-brand-status-green overflow-x-auto font-mono max-h-60 overflow-y-auto leading-normal selection:bg-brand-status-green selection:text-brand-dark">{{ request.output }}</pre>
       </div>
     </div>
   </div>

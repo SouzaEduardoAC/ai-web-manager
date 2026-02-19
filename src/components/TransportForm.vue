@@ -68,7 +68,7 @@ const handleSubmit = () => {
     <!-- Name -->
     <div>
       <label class="block text-sm font-medium text-gray-300 mb-1">Name *</label>
-      <input v-model="form.name" type="text" required placeholder="my-mcp-server" class="w-full bg-gray-900 border border-gray-700 rounded-md px-3 py-2 text-white focus:ring-2 focus:ring-oak-primary focus:border-transparent">
+      <input v-model="form.name" type="text" required placeholder="my-mcp-server" class="w-full bg-gray-900 border border-gray-700 rounded-md px-3 py-2 text-white focus:ring-2 focus:ring-brand-primary focus:border-transparent">
     </div>
 
     <!-- Transport Type -->
@@ -76,7 +76,7 @@ const handleSubmit = () => {
       <label class="block text-sm font-medium text-gray-300 mb-2">Transport Type *</label>
       <div class="grid grid-cols-2 gap-3">
         <button v-for="type in transportTypes" :key="type.value" type="button" @click="form.transport = type.value"
-          :class="form.transport === type.value ? 'border-oak-primary bg-oak-primary/10 ring-1 ring-oak-primary' : 'border-gray-700 bg-gray-900'"
+          :class="form.transport === type.value ? 'border-brand-primary bg-brand-primary/10 ring-1 ring-brand-primary' : 'border-gray-700 bg-gray-900'"
           class="p-3 border rounded-lg text-left transition hover:border-gray-500">
           <div class="font-semibold text-sm">{{ type.label }}</div>
           <div class="text-xs text-gray-500 line-clamp-1">{{ type.description }}</div>
@@ -99,7 +99,7 @@ const handleSubmit = () => {
       <div>
         <div class="flex justify-between items-center mb-2">
           <label class="text-sm font-medium text-gray-300">Custom Headers</label>
-          <button type="button" @click="addHeader" class="text-xs text-oak-primary hover:underline">+ Add Header</button>
+          <button type="button" @click="addHeader" class="text-xs text-brand-primary hover:underline">+ Add Header</button>
         </div>
         <div v-for="(header, i) in form.headers" :key="i" class="flex space-x-2 mb-2">
           <input v-model="header.key" placeholder="Key" class="flex-1 bg-gray-900 border border-gray-700 rounded-md px-2 py-1 text-sm text-white">
@@ -146,7 +146,7 @@ const handleSubmit = () => {
     <!-- Actions -->
     <div class="flex space-x-3 pt-4">
       <button type="button" @click="emit('cancel')" class="flex-1 px-4 py-2 border border-gray-700 rounded-lg hover:bg-gray-700 transition">Cancel</button>
-      <button type="submit" class="flex-1 px-4 py-2 bg-oak-primary hover:bg-blue-500 text-oak-dark font-bold rounded-lg transition">Add Server</button>
+      <button type="submit" class="flex-1 px-4 py-2 bg-brand-primary hover:bg-blue-500 text-brand-dark font-bold rounded-lg transition">Add Server</button>
     </div>
   </form>
 </template>

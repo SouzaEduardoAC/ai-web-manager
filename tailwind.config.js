@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        oak: {
-          dark: '#0f172a',
-          primary: '#224b0c', // Forest Green
-          secondary: '#6f4e37', // Earthy Brown
-          accent: '#b8860b', // Warm Amber
-          'status-green': '#4ade80',
-          'status-red': '#f87171',
+        brand: {
+          dark: 'var(--brand-dark)',
+          primary: 'var(--brand-primary)',
+          secondary: 'var(--brand-secondary)',
+          accent: 'var(--brand-accent)',
+          'status-green': 'var(--brand-status-green)',
+          'status-red': 'var(--brand-status-red)',
         }
       }
     },

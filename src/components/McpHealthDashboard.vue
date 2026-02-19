@@ -42,9 +42,9 @@ onMounted(() => {
         <div class="flex items-center justify-between">
           <div>
             <p class="text-gray-400 text-sm">Total MCPs</p>
-            <p class="text-3xl font-bold text-oak-primary">{{ mcpStore.summary.total }}</p>
+            <p class="text-3xl font-bold text-brand-primary">{{ mcpStore.summary.total }}</p>
           </div>
-          <div class="text-oak-primary">
+          <div class="text-brand-primary">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
             </svg>
@@ -56,9 +56,9 @@ onMounted(() => {
         <div class="flex items-center justify-between">
           <div>
             <p class="text-gray-400 text-sm">Healthy</p>
-            <p class="text-3xl font-bold text-oak-status-green">{{ mcpStore.summary.healthy }}</p>
+            <p class="text-3xl font-bold text-brand-status-green">{{ mcpStore.summary.healthy }}</p>
           </div>
-          <div class="text-oak-status-green">
+          <div class="text-brand-status-green">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
@@ -70,9 +70,9 @@ onMounted(() => {
         <div class="flex items-center justify-between">
           <div>
             <p class="text-gray-400 text-sm">Issues</p>
-            <p class="text-3xl font-bold text-oak-status-red">{{ mcpStore.summary.unhealthy + mcpStore.summary.reconnecting }}</p>
+            <p class="text-3xl font-bold text-brand-status-red">{{ mcpStore.summary.unhealthy + mcpStore.summary.reconnecting }}</p>
           </div>
-          <div class="text-oak-status-red">
+          <div class="text-brand-status-red">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
@@ -93,7 +93,7 @@ onMounted(() => {
       </div>
 
       <div v-if="mcpStore.isLoading && !mcpStore.registry.length" class="p-12 text-center text-gray-400">
-        <div class="animate-spin h-8 w-8 border-4 border-oak-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+        <div class="animate-spin h-8 w-8 border-4 border-brand-primary border-t-transparent rounded-full mx-auto mb-4"></div>
         <p>Loading server registry...</p>
       </div>
 
@@ -121,17 +121,17 @@ onMounted(() => {
                   <span class="text-gray-500">Last Success:</span>
                   <span>{{ formatTime(mcp.lastSuccess) }}</span>
                 </div>
-                <div v-if="mcp.consecutiveFailures > 0" class="col-span-full text-oak-accent flex items-center space-x-1 mt-1">
+                <div v-if="mcp.consecutiveFailures > 0" class="col-span-full text-brand-accent flex items-center space-x-1 mt-1">
                   <span class="text-lg leading-none">⚠</span>
                   <span>Consecutive Failures: {{ mcp.consecutiveFailures }}</span>
                 </div>
-                <div v-if="mcp.error" class="col-span-full text-oak-status-red text-xs mt-1 p-2 bg-red-900/20 rounded font-mono break-all">
+                <div v-if="mcp.error" class="col-span-full text-brand-status-red text-xs mt-1 p-2 bg-red-900/20 rounded font-mono break-all">
                   Error: {{ mcp.error }}
                 </div>
               </div>
             </div>
             <div class="ml-4 opacity-0 group-hover:opacity-100 transition">
-              <button @click="$emit('remove', mcp.name)" class="p-2 text-gray-400 hover:text-oak-status-red transition" title="Remove MCP">
+              <button @click="$emit('remove', mcp.name)" class="p-2 text-gray-400 hover:text-brand-status-red transition" title="Remove MCP">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>

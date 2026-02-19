@@ -36,7 +36,7 @@ const handleReject = (callId: string) => {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col h-full overflow-hidden bg-oak-dark/50 backdrop-blur-sm rounded-2xl border border-gray-800 shadow-2xl">
+  <div class="flex-1 flex flex-col h-full overflow-hidden bg-brand-dark/50 backdrop-blur-sm rounded-2xl border border-gray-800 shadow-2xl">
     <!-- Messages Area -->
     <div ref="chatContainer" class="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
       <div v-if="chatStore.messages.length === 0" class="h-full flex flex-col items-center justify-center text-gray-500 space-y-4">
@@ -55,7 +55,7 @@ const handleReject = (callId: string) => {
         <!-- User Message -->
         <div v-if="msg.role === 'user'" class="self-end max-w-[85%] group">
           <div class="flex flex-col items-end space-y-1">
-            <div class="bg-oak-primary text-oak-dark px-5 py-3 rounded-2xl rounded-tr-none font-medium shadow-lg shadow-oak-primary/10">
+            <div class="bg-brand-primary text-brand-dark px-5 py-3 rounded-2xl rounded-tr-none font-medium shadow-lg shadow-brand-primary/10">
               {{ msg.content }}
             </div>
             <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition pr-1">Directive Sent</span>
@@ -66,7 +66,7 @@ const handleReject = (callId: string) => {
         <div v-if="msg.role === 'agent'" class="self-start max-w-[85%] group">
           <div class="flex flex-col items-start space-y-1">
             <div class="bg-gray-800/80 text-gray-100 px-5 py-3 rounded-2xl rounded-tl-none border border-gray-700 shadow-xl backdrop-blur-md">
-              <p class="whitespace-pre-wrap leading-relaxed text-sm selection:bg-oak-primary selection:text-oak-dark">{{ msg.content }}</p>
+              <p class="whitespace-pre-wrap leading-relaxed text-sm selection:bg-brand-primary selection:text-brand-dark">{{ msg.content }}</p>
             </div>
             <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition pl-1">Orchestrator Feedback</span>
           </div>
@@ -75,11 +75,11 @@ const handleReject = (callId: string) => {
         <!-- Thinking State -->
         <div v-if="msg.role === 'thinking'" class="self-start pl-2 flex items-center space-x-3">
           <div class="flex space-x-1.5">
-            <div class="w-1.5 h-1.5 bg-oak-primary rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-            <div class="w-1.5 h-1.5 bg-oak-primary rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-            <div class="w-1.5 h-1.5 bg-oak-primary rounded-full animate-bounce"></div>
+            <div class="w-1.5 h-1.5 bg-brand-primary rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+            <div class="w-1.5 h-1.5 bg-brand-primary rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+            <div class="w-1.5 h-1.5 bg-brand-primary rounded-full animate-bounce"></div>
           </div>
-          <span class="text-[10px] font-black text-oak-primary uppercase tracking-[0.2em] animate-pulse">Processing</span>
+          <span class="text-[10px] font-black text-brand-primary uppercase tracking-[0.2em] animate-pulse">Processing</span>
         </div>
 
         <!-- Tool Approval -->
@@ -99,13 +99,13 @@ const handleReject = (callId: string) => {
           v-model="inputMessage"
           type="text"
           placeholder="ENTER MISSION DIRECTIVE..."
-          class="w-full bg-gray-950 border border-gray-700 text-gray-100 rounded-xl px-5 py-4 pr-24 focus:outline-none focus:ring-2 focus:ring-oak-primary/50 focus:border-oak-primary transition-all duration-300 placeholder:text-gray-700 font-mono text-sm tracking-wide shadow-inner"
+          class="w-full bg-gray-950 border border-gray-700 text-gray-100 rounded-xl px-5 py-4 pr-24 focus:outline-none focus:ring-2 focus:ring-brand-primary/50 focus:border-brand-primary transition-all duration-300 placeholder:text-gray-700 font-mono text-sm tracking-wide shadow-inner"
           :disabled="chatStore.isThinking"
         >
         <div class="absolute right-2 top-2 bottom-2 flex items-center">
           <button
             type="submit"
-            class="h-full bg-oak-primary hover:bg-blue-400 disabled:bg-gray-800 disabled:text-gray-600 text-oak-dark px-6 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 active:scale-95 shadow-lg shadow-oak-primary/20"
+            class="h-full bg-brand-primary hover:bg-blue-400 disabled:bg-gray-800 disabled:text-gray-600 text-brand-dark px-6 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 active:scale-95 shadow-lg shadow-brand-primary/20"
             :disabled="!inputMessage.trim() || chatStore.isThinking"
           >
             EXECUTE
@@ -115,11 +115,11 @@ const handleReject = (callId: string) => {
       <div class="mt-3 flex justify-between items-center px-1">
         <div class="flex items-center space-x-4">
           <div class="flex items-center space-x-1.5">
-            <div class="w-1 h-1 rounded-full" :class="chatStore.isThinking ? 'bg-oak-accent animate-pulse' : 'bg-gray-700'"></div>
+            <div class="w-1 h-1 rounded-full" :class="chatStore.isThinking ? 'bg-brand-accent animate-pulse' : 'bg-gray-700'"></div>
             <span class="text-[9px] font-bold text-gray-600 uppercase tracking-tighter">System Engine</span>
           </div>
           <div class="flex items-center space-x-1.5">
-            <div class="w-1 h-1 rounded-full" :class="!chatStore.isThinking ? 'bg-oak-status-green' : 'bg-gray-700'"></div>
+            <div class="w-1 h-1 rounded-full" :class="!chatStore.isThinking ? 'bg-brand-status-green' : 'bg-gray-700'"></div>
             <span class="text-[9px] font-bold text-gray-600 uppercase tracking-tighter">Input Buffer</span>
           </div>
         </div>

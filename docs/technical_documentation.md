@@ -5,9 +5,9 @@ The web interface is a modern Single Page Application (SPA) built with **Vue 3**
 
 ### Key Technologies
 - **Framework:** Vue 3 (Composition API)
-- **State Management:** Pinia (modular stores for Auth, Chat, and Registry)
+- **State Management:** Pinia (modular stores for Auth, Chat, Registry, and Theme)
 - **Routing:** Vue Router (Lazy-loading for views)
-- **Styling:** Tailwind CSS with a custom **"Oak Theme"** (Nature-inspired: Forest Green, Earthy Brown, Warm Amber)
+- **Styling:** Tailwind CSS with a dynamic **Multi-Theme Engine**.
 - **Networking:** Native WebSocket API + Axios for RESTful requests
 - **Auth:** Keycloak JS integration
 
@@ -17,7 +17,7 @@ The web interface is a modern Single Page Application (SPA) built with **Vue 3**
 │   ├── assets/         # Images, global styles, and fonts
 │   ├── components/     # Reusable UI components (Modals, Forms, Chat)
 │   ├── composables/    # Shared logic (useWebSocket)
-│   ├── stores/         # Pinia state management
+│   ├── stores/         # Pinia state management (Auth, Chat, Mcp, Theme)
 │   ├── utils/          # API helpers and centralized config
 │   ├── views/          # Route-level components (Chat, Registry)
 │   ├── App.vue         # Root layout and global event listeners
@@ -30,6 +30,14 @@ The web interface is a modern Single Page Application (SPA) built with **Vue 3**
 ├── nginx.conf          # Nginx configuration for SPA routing
 └── vite.config.ts      # Vite configuration
 ```
+
+## Theme Engine
+The application uses CSS variables mapped to Tailwind configuration to support dynamic theme switching:
+- **Generic Tokens:** All components use generic `brand-` tokens (e.g., `bg-brand-primary`, `text-brand-accent`).
+- **Themes:**
+  - **Oak (Default):** Forest Green, Earthy Brown, Warm Amber.
+  - **MCP:** Blue, Slate, Yellow.
+- **Implementation:** The `ThemeStore` toggles the `data-theme` attribute on the `<html>` element, which updates the underlying CSS variable definitions in `style.css`.
 
 ## Authentication Strategy
 The application supports a dual-mode authentication system controlled by `VITE_ENABLE_AUTH`:
@@ -51,7 +59,5 @@ The project is fully containerized using **Docker**:
 - **Orchestration:** `docker-compose.yml` manages the service, port mappings (`8080:80`), and environment variable injection.
 
 ## Asset Management
-
-- **Logo:** The primary branding logo is `src/assets/oak_logo.png`.
-
-- **Styling:** Global directives and theme configurations are handled in `src/style.css` and `tailwind.config.js` (using `oak-` tokens).
+- **Logo:** The primary branding logo is `src/assets/ecoza_corp_backgroundless.png`.
+- **Styling:** Global directives and theme variables are handled in `src/style.css` and `tailwind.config.js`.
