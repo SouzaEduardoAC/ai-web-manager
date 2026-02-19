@@ -14,6 +14,7 @@ The web interface is a modern Single Page Application (SPA) built with **Vue 3**
 ## Project Structure
 ```
 ├── src/
+│   ├── assets/         # Images, global styles, and fonts
 │   ├── components/     # Reusable UI components (Modals, Forms, Chat)
 │   ├── composables/    # Shared logic (useWebSocket)
 │   ├── stores/         # Pinia state management
@@ -24,6 +25,9 @@ The web interface is a modern Single Page Application (SPA) built with **Vue 3**
 ├── public/             # Static assets
 ├── docs/               # System documentation
 ├── package.json        # Dependencies and scripts
+├── Dockerfile          # Multi-stage build configuration
+├── docker-compose.yml  # Container orchestration
+├── nginx.conf          # Nginx configuration for SPA routing
 └── vite.config.ts      # Vite configuration
 ```
 
@@ -38,11 +42,14 @@ The app uses a custom JSON-based protocol over native WebSockets:
 - **Automatic Reconnection:** Exponential backoff logic handles transient network drops.
 - **Shared Instance:** The WebSocket connection is persisted across route changes via a shared composable state.
 
-## Component Modules
-### Chat Module
-- **ChatWindow.vue:** Handles message display and directive input.
-- **ToolApprovalQueue.vue:** A specialized UI for managing sequential tool approvals (1 of N).
+## Deployment & Containerization
+The project is fully containerized using **Docker**:
+- **Multi-stage Build:**
+  - **Stage 1 (Build):** Uses `node:20-alpine` to install dependencies and build the production-ready `dist` folder.
+  - **Stage 2 (Production):** Uses `nginx:stable-alpine` to serve the static assets.
+- **SPA Routing:** A custom `nginx.conf` is used to ensure all requests are redirected to `index.html`, allowing Vue Router to handle navigation.
+- **Orchestration:** `docker-compose.yml` manages the service, port mappings (`8080:80`), and environment variable injection.
 
-### MCP Management
-- **McpHealthDashboard.vue:** Real-time health monitoring of connected MCP servers.
-- **TransportForm.vue:** Dynamic configuration for Stdio, HTTP, SSE, and Docker-based transports.
+## Asset Management
+- **Logo:** The primary branding logo is `src/assets/ecoza_corp_backgroundless.png`.
+- **Styling:** Global directives and theme configurations are handled in `src/style.css` and `tailwind.config.js`.

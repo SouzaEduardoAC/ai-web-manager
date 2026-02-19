@@ -19,3 +19,4 @@ This project is the frontend command-and-control center for the **MCP (Model Con
 - **WebSocket:** `ws://[host]/ws` for real-time events.
 - **REST:** `/api/models/available`, `/api/mcp/health`, `/api/mcp/add`, etc.
 - **Auth:** Keycloak OIDC flow.
+- **Containerization:** `Dockerfile` and `docker-compose.yml` for standardized deployment.
