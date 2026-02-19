@@ -4,7 +4,8 @@ The frontend management console for the Model Context Protocol (MCP) Orchestrato
 
 ## 📁 Project Structure
 
-- **`/web-interface`**: The core Vue 3 + TypeScript application.
+- **`/src`**: The core Vue 3 + TypeScript source code.
+- **`/public`**: Static assets.
 - **`/docs`**: System documentation and architectural details.
 - **`web_interface_migration_plan.md`**: Strategic roadmap used for the legacy-to-modular migration.
 
@@ -21,7 +22,6 @@ The frontend management console for the Model Context Protocol (MCP) Orchestrato
 
 ### Installation
 ```bash
-cd web-interface
 npm install
 ```
 

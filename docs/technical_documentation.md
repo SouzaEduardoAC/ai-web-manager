@@ -13,7 +13,6 @@ The web interface is a modern Single Page Application (SPA) built with **Vue 3**
 
 ## Project Structure
 ```
-web-interface/
 ├── src/
 │   ├── components/     # Reusable UI components (Modals, Forms, Chat)
 │   ├── composables/    # Shared logic (useWebSocket)
@@ -22,6 +21,10 @@ web-interface/
 │   ├── views/          # Route-level components (Chat, Registry)
 │   ├── App.vue         # Root layout and global event listeners
 │   └── main.ts         # Application entry point
+├── public/             # Static assets
+├── docs/               # System documentation
+├── package.json        # Dependencies and scripts
+└── vite.config.ts      # Vite configuration
 ```
 
 ## Authentication Strategy
