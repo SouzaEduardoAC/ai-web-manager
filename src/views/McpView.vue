@@ -34,7 +34,7 @@ const handleRemoveMcp = async (name: string) => {
         <h2 class="text-2xl font-black uppercase tracking-tighter text-white">System Registry</h2>
         <p class="text-xs text-gray-500 font-medium uppercase tracking-widest mt-1">Manage external machine context protocols</p>
       </div>
-      <button @click="showAddMcpModal = true" class="bg-brand-primary hover:bg-brand-primary/80 text-white px-6 py-2 rounded-lg font-black text-xs uppercase tracking-widest shadow-lg shadow-brand-primary/20 transition-all active:scale-95">
+      <button @click="showAddMcpModal = true" class="bg-brand-primary/10 border border-brand-primary/30 hover:bg-brand-primary hover:text-brand-dark text-brand-primary px-6 py-2 rounded-lg font-black text-xs uppercase tracking-widest shadow-lg shadow-brand-primary/10 transition-all active:scale-95">
         + Register Server
       </button>
     </div>

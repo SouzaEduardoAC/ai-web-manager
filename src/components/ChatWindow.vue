@@ -105,7 +105,7 @@ const handleReject = (callId: string) => {
         <div class="absolute right-2 top-2 bottom-2 flex items-center">
           <button
             type="submit"
-            class="h-full bg-brand-primary hover:bg-brand-primary/80 disabled:bg-gray-800 disabled:text-gray-600 text-white px-6 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 active:scale-95 shadow-lg shadow-brand-primary/20"
+            class="h-full bg-brand-primary/10 border border-brand-primary/30 hover:bg-brand-primary hover:text-brand-dark disabled:bg-gray-800 disabled:text-gray-600 text-brand-primary px-6 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 active:scale-95 shadow-lg shadow-brand-primary/10"
             :disabled="!inputMessage.trim() || chatStore.isThinking"
           >
             EXECUTE
