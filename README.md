@@ -19,6 +19,7 @@ The frontend management console for the Model Context Protocol (MCP) Orchestrato
 ### Prerequisites
 - Node.js (v18+)
 - MCP Orchestrator Backend (Golang)
+- Docker & Docker Compose (optional)
 
 ### Installation
 ```bash
@@ -33,6 +34,13 @@ cp .env.example .env
 # Start the dev server
 npm run dev
 ```
+
+### Running with Docker
+```bash
+# Build and start the container
+docker-compose up -d --build
+```
+The interface will be available at `http://localhost:8080`.
 
 ## 🛠 Features
 - **Real-time Agent Chat**: Powered by native WebSockets.
