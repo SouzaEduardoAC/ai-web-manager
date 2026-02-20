@@ -56,7 +56,7 @@ The project is fully containerized using **Docker**:
   - **Stage 1 (Build):** Uses `node:20-alpine` to install dependencies and build the production-ready `dist` folder.
   - **Stage 2 (Production):** Uses `nginx:stable-alpine` to serve the static assets.
 - **SPA Routing:** A custom `nginx.conf` is used to ensure all requests are redirected to `index.html`, allowing Vue Router to handle navigation.
-- **Orchestration:** `docker-compose.yml` manages the service, port mappings (`8080:80`), and environment variable injection.
+- **Orchestration:** `docker-compose.yml` manages the service, port mappings (`5173:80`), and environment variable injection.
 
 ## Asset Management
 - **Logo:** The primary branding logo is `src/assets/ecoza_corp_backgroundless.png`.
